@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+body {
+  box-sizing: border-box;
+  height: 145vh;
+  font-family: "Inter", sans-serif;
+
+  display: grid;
+  place-items: center;
+}
+
+$color-primary: hsl(240, 100%, 5%);
+$colors-hover: hsl(35, 77%, 62%);
+$colors-hover2: hsl(5, 85%, 63%);
+$colors-text: hsl(236, 13%, 42%);
+$colors-text2: hsl(233, 8%, 79%);
+
+.container {
+  width: 95%;
+  height: 90%;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+
+    .logo {
+      width: 7rem;
+      height: 4rem;
+    }
+
+    .bx {
+      color: #000;
+      display: none;
+    }
+
+    .menu {
+      display: block;
+      .lista {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        li {
+          margin-left: 50px;
+          font-size: 20px;
+          color: $colors-text;
+          transition: all 1s;
+
+          &:hover {
+            color: $colors-hover2;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .import {
+      margin-right: 20px;
+
+      .portada {
+        width: 50rem;
+      }
+
+      .textP {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .titleG {
+          font-size: 4rem;
+          margin: 2rem 0;
+          line-height: 65px;
+        }
+
+        .Pharagramp {
+          margin-top: 2rem;
+          margin-left: 2rem;
+
+          .parrf {
+            font-size: 20px;
+            color: $colors-text;
+            margin-top: 0;
+          }
+
+          .btn {
+            background: $colors-hover2;
+            color: #fff;
+            padding: 20px 3rem;
+            margin-top: 40px;
+            border: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 800;
+            transition: all 1s;
+            letter-spacing: 3px;
+
+            &:hover {
+              background: $color-primary;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .articles {
+      background: $color-primary;
+      margin-left: 20px;
+      padding: 35px;
+
+      .titleA {
+        font-size: 3rem;
+        margin-top: 0;
+        color: $colors-hover;
+      }
+      hr {
+        margin: 40px 0;
+        opacity: 0.3;
+      }
+
+      .resum {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        transition: all 1s ease;
+
+        &:hover {
+          color: $colors-hover;
+          cursor: pointer;
+        }
+      }
+
+      .description {
+        color: $colors-text;
+        line-height: 28px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .box {
+      display: flex;
+      margin-top: 5rem;
+
+      .img-extra {
+        width: 8rem;
+        height: 10rem;
+      }
+
+      .text {
+        margin-left: 15px;
+        padding: 0 20px 0 10px;
+
+        .num {
+          color: $colors-text2;
+          font-size: 2.6rem;
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+
+        .resum-cart {
+          font-weight: 800;
+          font-size: 21px;
+          transition: all 1s;
+
+          &:hover {
+            color: $colors-hover2;
+            cursor: pointer;
+          }
+        }
+
+        .descrip-cart {
+          font-size: 18px;
+          color: $colors-text;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 93%;
+    height: 97%;
+
+    .navbar {
+      padding-bottom: 20px;
+
+      .bx-menu {
+        position: absolute;
+        display: block;
+        font-size: 60px;
+        right: 20px;
+        top: 55px;
+        cursor: pointer;
+      }
+
+      .menu {
+        .menu-list {
+          position: fixed;
+          right: 0;
+          top: 0;
+          background-color: rgb(0, 0, 0, 0.6);
+          width: 100vw;
+
+          .bx-x {
+            position: absolute;
+            display: block;
+            font-size: 60px;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+          }
+
+          .lista {
+            flex-direction: column;
+            margin: 0;
+            margin-left: 17rem;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            width: 21rem;
+            height: 100vh;
+
+            li {
+              margin: 20px;
+              font-weight: 500;
+              color: #000;
+
+              &:hover {
+                color: $colors-hover2;
+              }
+            }
+          }
+        }
+      }
+      .menu.block {
+        display: none;
+      }
+    }
+
+    .principal {
+      grid-template-columns: 1fr;
+
+      .import {
+        margin-right: 0;
+
+        .portada {
+          width: 27.6rem;
+        }
+        .textP {
+          grid-template-columns: 1fr;
+
+          .titleG {
+            font-size: 3rem;
+            margin-right: 3rem;
+          }
+
+          .Pharagramp {
+            margin: 0;
+            line-height: 40px;
+
+            .parrf {
+              font-size: 19px;
+            }
+
+            .btn {
+              margin-top: 10px;
+              margin-bottom: 6rem;
+              padding: 20px 4rem;
+            }
+          }
+        }
+      }
+      .articles {
+        margin-left: 0;
+
+        hr {
+          margin: 50px 0;
+        }
+
+        .resum {
+          font-size: 26px;
+        }
+        .description {
+          font-size: 19px;
+        }
+      }
+    }
+    .footer {
+      grid-template-columns: 1fr;
+      margin: 3.5rem 0;
+
+      .box {
+        margin-top: 40px;
+
+        .img-extra {
+          width: 8rem;
+          height: 10rem;
+        }
+
+        .text {
+          .num {
+            font-size: 2.5rem;
+          }
+
+          .resum-cart {
+            font-size: 22px;
+          }
+          .descrip-cart {
+            font-size: 19px;
+          }  
+        }
+      }
+    }
+  }
+}
